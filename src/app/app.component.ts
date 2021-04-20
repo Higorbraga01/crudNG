@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'crudNg';
+  planejamento_tca_url: string = 'teste';
+  title = 'Planejamento - TCA';
 }

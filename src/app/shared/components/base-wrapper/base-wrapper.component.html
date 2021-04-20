@@ -1,0 +1,65 @@
+<section id="section">
+  <header class="l-header">
+    <p-toast></p-toast>
+    <div class="c-header p-d-flex p-pl-3 p-pr-3 p-ai-center p-jc-between">
+      <!-- Logo and name container -->
+      <a [href]="basePath" class="p-d-flex p-ai-center">
+        <img
+          class="c-header__logo"
+          src="assets/images/gladio-alado-3d.jpg"
+          alt="gladio alado"
+        />
+        <h1 class="c-header__title p-ml-2">
+          <span class="c-header__subtitle p-ml-1 p-mr-3"> </span>
+        </h1>
+      </a>
+      <!-- <div class="p-d-flex p-ai-center">
+        <div class="c-header__session-time p-mr-5 p-d-flex p-ai-center">
+          <i class="pi pi-clock p-mr-2"></i>
+          <p>
+            <span>Sessão expira em</span>
+          </p>
+        </div>
+        <p-button
+          label="NOTIFICAÇÕES"
+          icon="pi pi-bell"
+          styleClass="p-button-outlined p-mr-5"
+          [disabled]="true"
+        >
+        </p-button>
+        <span class="p-mr-2"></span>
+        <p-avatar shape="circle" styleClass="p-mr-4"></p-avatar>
+        <p-button
+          icon="pi pi-sign-out"
+          iconPos="right"
+          styleClass="p-button-text p-button-secondary"
+          (onClick)="handleLogout()"
+        ></p-button>
+      </div> -->
+    </div>
+    <div class="c-sub-header p-d-flex p-pl-3 p-pr-3 p-ai-center p-jc-between">
+      <div>
+        <a [href]="basePath">
+          <button
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-home"
+            class="c-sub-btn"
+          ></button>
+        </a>
+      </div>
+      <a href="#" target="_blank" rel="noopener">
+        <p-button
+          label="AJUDA"
+          icon="pi pi-question-circle"
+          styleClass="c-sub-header__help-btn"
+        ></p-button>
+      </a>
+    </div>
+  </header>
+  <div class="l-body">
+    <shrd-sidenav [basePath]="basePath"></shrd-sidenav>
+    <ng-content></ng-content>
+  </div>
+</section>
