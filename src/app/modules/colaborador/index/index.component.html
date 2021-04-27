@@ -1,0 +1,71 @@
+<section class="l-finor-consulta-container">
+  <header>
+    <div class="l-finor-consulta-container__header">
+      <div class="p-grid l-main-grid">
+        <div class="p-col-12 p-xl-10 p-xl-offset-1"></div>
+      </div>
+      <div
+        class="l-finor-consulta-container__title-wrapper p-col-12 p-xl-10 p-xl-offset-1 p-mb-3 p-d-flex p-ai-center"
+      >
+        <h2 class="l-finor-consulta-container__title p-ml-3">
+          Listagem de Colaboradores
+        </h2>
+      </div>
+    </div>
+  </header>
+  <p-toolbar styleClass="p-mb-2 p-reset">
+    <div class="p-toolbar-group-left"></div>
+    <div class="p-toolbar-group-left">
+      <p-button
+        type="button"
+        icon="pi pi-sort-alt"
+        styleClass="p-button-text"
+      ></p-button>
+    </div>
+  </p-toolbar>
+  <div class="p-grid l-main-grid">
+    <p-card styleClass="p-mt-3 p-reset">
+      <p-table
+        [value]="colaboradores"
+        [paginator]="true"
+        [rows]="5"
+        [rowsPerPageOptions]="[5, 25, 50]"
+        styleClass="p-datatable-gridlines p-datatable-striped  p-datatable-sm-custom"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Setor</th>
+            <th>Dt Nascimento</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-colaborador>
+          <tr>
+            <td>{{ colaborador.id }}</td>
+            <td>{{ colaborador.nome }}</td>
+            <td>{{ colaborador.setor.descricao }}</td>
+            <td>{{ colaborador.dataNascimento | date: "shortDate" }}</td>
+            <td>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-pencil"
+                class="p-button-rounded p-button-success p-mr-2"
+              ></button>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-warning"
+                (click)="deleteProduct(colaborador)"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+  <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+</section>

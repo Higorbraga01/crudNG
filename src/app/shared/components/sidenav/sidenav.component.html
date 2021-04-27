@@ -11,8 +11,18 @@
     <button class="l-sidenav__btn" (click)="toggleNav()"></button>
     <nav>
       <ul>
-        <shrd-sidenav-item (click)="toggleNav()" href="#" [routerLink]="['/area']">Área de Planejamento</shrd-sidenav-item>
-        <shrd-sidenav-item (click)="toggleNav()" href="#" [routerLink]="['/planejamento']" >Planejamento</shrd-sidenav-item>
+        <shrd-sidenav-item
+          (click)="toggleNav()"
+          href="#"
+          [routerLink]="['/area']"
+          >Área de Planejamento</shrd-sidenav-item
+        >
+        <shrd-sidenav-item
+          (click)="toggleNav()"
+          href="#"
+          [routerLink]="['/colaborador/index']"
+          >Colaboradores</shrd-sidenav-item
+        >
       </ul>
     </nav>
   </div>
