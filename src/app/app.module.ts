@@ -19,7 +19,8 @@ import { DropdownModule } from 'primeng/dropdown'
 import { EditComponent } from './modules/colaborador/edit/edit.component';
 import { TabViewModule } from 'primeng/tabview';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import {CalendarModule} from 'primeng/calendar';
+import { CalendarModule } from 'primeng/calendar';
+import { InputMaskModule } from 'primeng/inputmask';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import {CalendarModule} from 'primeng/calendar';
     ReactiveFormsModule,
     TabViewModule,
     AutoCompleteModule,
-    CalendarModule
+    CalendarModule,
+    InputMaskModule
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]

@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
       cpf: this.fb.control('', Validators.required),
       nome: this.fb.control('', Validators.required),
       email: this.fb.control('', [Validators.email, Validators.required]),
-      dataNascimento: this.fb.control('', Validators.required),
+      dataNascimento: this.fb.control(null, Validators.required),
       setor: this.fb.control('', Validators.required),
       telefone: this.fb.control('', Validators.required)
     })
@@ -40,12 +40,13 @@ export class EditComponent implements OnInit {
       this.id = this.route.snapshot.params['id'];
       this.colaboradorService.readById(this.id).subscribe((response) => {
         this.colaborador = response;
+        console.log(response);
         this.form.patchValue({
           id: response.id,
           cpf: response.cpf,
           nome: response.nome,
           email: response.email,
-          dataNascimento: response.dataNascimento,
+          dataNascimento: new Date(response.dataNascimento),
           setor: response.setor,
           telefone: response.telefone
         })
