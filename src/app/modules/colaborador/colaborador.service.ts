@@ -11,6 +11,8 @@ export class ColaboradorService {
 
   API_URL = "https://backendplenohigorbraga.herokuapp.com/colaboradores";
 
+  // API_URL = "http://localhost:8080/colaboradores";
+
   constructor(private http: HttpClient) { }
 
   // showMessage(msg, isError: boolean = false): void {
@@ -22,10 +24,14 @@ export class ColaboradorService {
   //   })
   // }
 
-  create(colaborador: Colaborador): Observable<Colaborador> {
-    return this.http.post<Colaborador>(this.API_URL, colaborador).pipe(
-      map((obj) => obj)
-    );
+  save(data: Colaborador): Observable<Colaborador> {
+    return !data.id
+      ? this.http
+        .post<Colaborador>(`${this.API_URL}/`, data)
+        .pipe(map((data) => data))
+      : this.http
+        .put<Colaborador>(`${this.API_URL}/${data.id}`, data)
+        .pipe(map((data) => data));
   }
 
   read(): Observable<Colaborador[]> {
@@ -41,13 +47,6 @@ export class ColaboradorService {
     );
   }
 
-  update(colaborador: Colaborador): Observable<Colaborador> {
-    const url = `${this.API_URL}/${colaborador.id}`;
-    return this.http.put<Colaborador>(url, colaborador).pipe(
-      map((obj) => obj)
-    );
-  }
-
   delete(id: number): Observable<Colaborador> {
     const url = `${this.API_URL}/${id}`;
     return this.http.delete<Colaborador>(url).pipe(
@@ -55,6 +54,7 @@ export class ColaboradorService {
     );
 
   }
+
 
   // errorHandler(e: any): Observable<any> {
   //   this.showMessage('Ocorreu um erro', true);

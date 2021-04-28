@@ -9,7 +9,9 @@ import { Setor } from './setor.model';
 })
 export class SetorService {
 
-  API_URL = "https://backendplenohigorbraga.herokuapp.com/setores"
+  API_URL = "https://backendplenohigorbraga.herokuapp.com/setores";
+
+  // API_URL = "http://localhost:8080/setores";
 
   constructor(private http: HttpClient) { }
 

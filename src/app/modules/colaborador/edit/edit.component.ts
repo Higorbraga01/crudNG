@@ -4,7 +4,7 @@ import { ColaboradorService } from './../colaborador.service';
 import { Colaborador } from './../colaborador.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 
 @Component({
@@ -23,6 +23,7 @@ export class EditComponent implements OnInit {
     private fb: FormBuilder,
     private colaboradorService: ColaboradorService,
     private route: ActivatedRoute,
+    private router: Router,
     private setorService: SetorService) { }
 
   ngOnInit(): void {
@@ -68,5 +69,11 @@ export class EditComponent implements OnInit {
     //       }));
     //     })
     // );
+  }
+
+  save(): void {
+    this.colaboradorService.save(this.form.value).subscribe((response) => {
+      this.router.navigate(['colaborador/index'])
+    })
   }
 }
