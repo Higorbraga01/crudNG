@@ -16,11 +16,15 @@
   <p-toolbar styleClass="p-mb-2 p-reset">
     <div class="p-toolbar-group-left"></div>
     <div class="p-toolbar-group-left">
-      <p-button
-        type="button"
-        icon="pi pi-sort-alt"
-        styleClass="p-button-text"
-      ></p-button>
+      <div>
+        <p-button
+          class="p-mr-3"
+          styleClass="p-button-help"
+          [label]="'Novo'"
+          icon="pi pi-save"
+          [routerLink]="['/colaborador', 'add']"
+        ></p-button>
+      </div>
     </div>
   </p-toolbar>
   <div class="p-grid l-main-grid">

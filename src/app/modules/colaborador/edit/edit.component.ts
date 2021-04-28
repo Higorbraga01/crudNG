@@ -52,10 +52,10 @@ export class EditComponent implements OnInit {
           telefone: response.telefone
         })
       })
-      this.setorService.read().subscribe((setores) => {
-        this.setores = setores;
-      })
     }
+    this.setorService.read().subscribe((setores) => {
+      this.setores = setores;
+    })
   }
 
   searchArea(event: any): void {

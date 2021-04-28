@@ -24,10 +24,10 @@ export class ColaboradorService {
   //   })
   // }
 
-  save(data: Colaborador): Observable<Colaborador> {
+  save(data: any): Observable<Colaborador> {
     return !data.id
       ? this.http
-        .post<Colaborador>(`${this.API_URL}/`, data)
+        .post<Colaborador>(this.API_URL, data)
         .pipe(map((data) => data))
       : this.http
         .put<Colaborador>(`${this.API_URL}/${data.id}`, data)
