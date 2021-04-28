@@ -19,7 +19,7 @@
       <div>
         <p-button
           class="p-mr-3"
-          styleClass="p-button-help"
+          styleClass="p-button-success"
           [label]="'Novo'"
           icon="pi pi-save"
           [routerLink]="['/colaborador', 'add']"
@@ -50,20 +50,20 @@
             <td>{{ colaborador.id }}</td>
             <td>{{ colaborador.nome }}</td>
             <td>{{ colaborador.setor.descricao }}</td>
-            <td>{{ colaborador.dataNascimento | date: "shortDate" }}</td>
+            <td>{{ colaborador.dataNascimento | date: "dd/MM/YYYY" }}</td>
             <td>
               <button
                 pButton
                 pRipple
                 icon="pi pi-pencil"
-                class="p-button-rounded p-button-success p-mr-2"
+                class="p-button-rounded p-button-help p-mr-2"
                 [routerLink]="['/colaborador', 'edit', colaborador.id]"
               ></button>
               <button
                 pButton
                 pRipple
                 icon="pi pi-trash"
-                class="p-button-rounded p-button-warning"
+                class="p-button-rounded p-button-danger"
                 (click)="deleteColaborador(colaborador)"
               ></button>
             </td>

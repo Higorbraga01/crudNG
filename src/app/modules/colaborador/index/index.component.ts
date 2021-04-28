@@ -43,6 +43,7 @@ export class IndexComponent implements OnInit {
       message: 'Tem certeza de que deseja excluir o colaborador ' + colaborador.nome + '?',
       header: 'Confirmação',
       icon: 'pi pi-exclamation-triangle',
+      acceptButtonStyleClass: 'p-button-danger',
       accept: () => {
         this.colaboradores.filter(val => val.id !== colaborador.id);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Colaborador Excluido', life: 3000 });

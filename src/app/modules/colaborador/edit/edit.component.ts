@@ -58,6 +58,11 @@ export class EditComponent implements OnInit {
     })
   }
 
+
+  reset() {
+    this.form.reset();
+  }
+
   searchArea(event: any): void {
     // this.subs$.push(
     //   this.colaboradorService.findAllArea({ sigla: event.query })
