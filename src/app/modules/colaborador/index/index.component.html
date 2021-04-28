@@ -53,13 +53,14 @@
                 pRipple
                 icon="pi pi-pencil"
                 class="p-button-rounded p-button-success p-mr-2"
+                [routerLink]="['/colaborador', 'edit', colaborador.id]"
               ></button>
               <button
                 pButton
                 pRipple
                 icon="pi pi-trash"
                 class="p-button-rounded p-button-warning"
-                (click)="deleteProduct(colaborador)"
+                (click)="deleteColaborador(colaborador)"
               ></button>
             </td>
           </tr>
