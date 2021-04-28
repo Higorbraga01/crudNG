@@ -15,10 +15,8 @@ import { ActivatedRoute, Route } from '@angular/router';
 export class EditComponent implements OnInit {
 
   id: number;
-
   colaborador: Colaborador;
   setores: Setor[];
-
   form: FormGroup
 
   constructor(

@@ -93,19 +93,29 @@
                     Digite um email valido
                   </small>
                 </div>
-                <div class="p-field p-col-4">
+                <div class="p-field p-col-3">
                   <label>Setor</label>
-                  <p-dropdown [options]="setores" formControlName="setor">
-                    <ng-template let-setor pTemplate="item">
-                      <div class="dropdown-item-container" value="setor">
-                        <span style="font-weight: bolder; font-size: 1.2rem">{{
-                          setor.descricao
-                        }}</span>
-                      </div>
-                    </ng-template>
+                  <p-dropdown
+                    [options]="setores"
+                    formControlName="setor"
+                    optionLabel="descricao"
+                  >
                   </p-dropdown>
                 </div>
-                <div class="p-field p-col-12"></div>
+                <div class="p-field p-col-3">
+                  <label for="icon">Data de Nascimento</label>
+                  <p-calendar
+                    #theDate
+                    id="dataNascimento"
+                    formControlName="dataNascimento"                    
+                    hourFormat="24"              
+                    [showIcon]="true"
+                    placeholder="Set Date"
+                    required
+                  >
+                  </p-calendar>
+                  <p>SetDate Value :: {{ theDate.value | date: "shortDate" }}</p>
+                </div>
                 <div class="p-field p-col-12"></div>
               </form>
             </p-card>
