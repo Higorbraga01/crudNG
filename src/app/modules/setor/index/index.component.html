@@ -1,0 +1,80 @@
+<section class="l-finor-consulta-container">
+  <header>
+    <div class="l-finor-consulta-container__header">
+      <div class="p-grid l-main-grid">
+        <div class="p-col-12 p-xl-10 p-xl-offset-1"></div>
+      </div>
+      <div
+        class="l-finor-consulta-container__title-wrapper p-col-12 p-xl-10 p-xl-offset-1 p-mb-3 p-d-flex p-ai-center"
+      >
+        <h2 class="l-finor-consulta-container__title p-ml-3">
+          Listagem de Setores
+        </h2>
+      </div>
+    </div>
+  </header>
+  <p-toolbar styleClass="p-mb-2 p-reset">
+    <div class="p-toolbar-group-left"></div>
+    <div class="p-toolbar-group-left">
+      <div>
+        <p-button
+          class="p-mr-3"
+          styleClass="p-button-success"
+          [label]="'Novo'"
+          icon="pi pi-save"
+          [routerLink]="['/setor', 'add']"
+        ></p-button>
+      </div>
+    </div>
+  </p-toolbar>
+  <div class="p-grid l-main-grid">
+    <p-card styleClass="p-mt-3 p-reset">
+      <p-table
+        [value]="setores"
+        [paginator]="true"
+        [rows]="5"
+        [rowsPerPageOptions]="[5, 25, 50]"
+        styleClass="p-datatable-gridlines p-datatable-striped  p-datatable-sm-custom"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Colaboradores</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-setor>
+          <tr>
+            <td>{{ setor?.id }}</td>
+            <td>{{ setor?.descricao }}</td>
+            <td>
+              <ng-container *ngFor="let colaborador of setor.colaboradores">
+                <li>
+                  {{ colaborador.nome }}
+                </li>
+              </ng-container>
+            </td>
+            <td>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-pencil"
+                class="p-button-rounded p-button-help p-mr-2"
+                [routerLink]="['/setor', 'edit', setor.id]"
+              ></button>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteSetor(setor)"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+  <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+</section>
