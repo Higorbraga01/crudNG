@@ -1,9 +1,9 @@
 import { RouterModule } from '@angular/router';
-import { EditComponent } from './edit/edit.component';
-import { TableModule } from 'primeng/table';
-import { IndexComponent } from './index/index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IndexComponent } from './index/index.component';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -14,12 +14,11 @@ import { TabViewModule } from 'primeng/tabview';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { InputMaskModule } from 'primeng/inputmask';
-import { ToolbarModule } from 'primeng/toolbar';
-
-
 
 @NgModule({
-  declarations: [IndexComponent, EditComponent],
+  declarations: [
+    IndexComponent,
+  ],
   imports: [
     CommonModule,
     TableModule,
@@ -36,6 +35,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     InputMaskModule,
     RouterModule,
     ToolbarModule,
+
   ]
 })
-export class ColaboradorModule { }
+export class SetorModule { }

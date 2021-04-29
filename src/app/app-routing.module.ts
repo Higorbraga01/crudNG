@@ -13,6 +13,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/colaborador/colaborador-routing.module').then((m) => m.ColaboradorRoutingModule),
   }
+  ,
+  {
+    path: 'setor',
+    loadChildren: () =>
+      import('./modules/setor/setor-routing.module').then((m) => m.SetorRoutingModule),
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
