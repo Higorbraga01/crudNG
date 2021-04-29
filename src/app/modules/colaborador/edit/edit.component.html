@@ -8,7 +8,7 @@
         >
           <div>
             <h2 class="l-finor-cadastro-container__title p-ml-3">
-              Área de Planejamento -
+              Colaborador -
             </h2>
             <h2 class="l-finor-cadastro-container__title p-ml-3">
               {{ id ? "Editar " : "Criar " }}
@@ -61,6 +61,7 @@
                 <div class="p-field p-col-6">
                   <label>Nome</label>
                   <input
+                    placeholder="Preencha um nome"
                     formControlName="nome"
                     id="nome"
                     type="text"
@@ -76,6 +77,7 @@
                 <div class="p-field p-col-3">
                   <label>Cpf</label>
                   <p-inputMask
+                    placeholder="Preencha um cpf"
                     mask="999-999-999-99"
                     formControlName="cpf"
                   ></p-inputMask>
@@ -88,7 +90,12 @@
                 </div>
                 <div class="p-field p-col-3">
                   <label>Email</label>
-                  <input formControlName="email" type="email" pInputText />
+                  <input
+                    placeholder="Preencha um cpf"
+                    formControlName="email"
+                    type="email"
+                    pInputText
+                  />
                   <small
                     class="p-invalid"
                     *ngIf="
@@ -101,6 +108,7 @@
                 <div class="p-field p-col-3">
                   <label>Setor</label>
                   <p-dropdown
+                    placeholder="Selecione um setor"
                     [options]="setores"
                     formControlName="setor"
                     optionLabel="descricao"
@@ -110,11 +118,16 @@
                 <div class="p-field p-col-3">
                   <label for="icon">Data de Nascimento</label>
                   <p-calendar
+                    placeholder="Preencha uma data de nascimento"
+                    yearRange="1900:2021"
+                    [monthNavigator]="true"
+                    [yearNavigator]="true"
                     formControlName="dataNascimento"
                     dateFormat="dd/mm/yy"
                     showIcon="true"
+                    baseZIndex="10"
+                    appendTo="body"
                   >
-                    <p-inputMask mask="99/99/9999"></p-inputMask>
                   </p-calendar>
                 </div>
                 <div class="p-field p-col-3">
@@ -122,7 +135,7 @@
                   <p-inputMask
                     mask="(99) 99999-9999"
                     formControlName="telefone"
-                    placeholder="(99) 99999-9999"
+                    placeholder="Preencha um telefone"
                   ></p-inputMask>
                   <small
                     class="p-invalid"
