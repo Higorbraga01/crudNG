@@ -40,6 +40,13 @@ export class SetorService {
     );
   }
 
+  readById(id: number): Observable<Setor> {
+    const url = `${this.API_URL}/${id}`;
+    return this.http.get<Setor>(url).pipe(
+      map((obj) => obj)
+    );
+  }
+
   delete(id: number): Observable<Setor> {
     const url = `${this.API_URL}/${id}`;
     return this.http.delete<Setor>(url).pipe(

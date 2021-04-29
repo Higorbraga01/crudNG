@@ -29,6 +29,7 @@ export class IndexComponent implements OnInit {
       this.setores.map((model, index) => {
         if (id === model.id) {
           this.setores.splice(index, 1);
+          this.ngOnInit();
         }
       });
     });

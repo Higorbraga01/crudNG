@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index/index.component';
+import { EditComponent } from './edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -10,11 +11,11 @@ export const routes: Routes = [
   },
   {
     path: 'add',
-    component: IndexComponent,
+    component: EditComponent,
   },
   {
     path: 'edit/:id',
-    component: IndexComponent,
+    component: EditComponent,
   }
 ];
 

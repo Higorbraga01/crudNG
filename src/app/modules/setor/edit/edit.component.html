@@ -1,0 +1,85 @@
+<section class="l-finor-cadastro-container" xmlns="http://www.w3.org/1999/html">
+  <header>
+    <div class="l-finor-cadastro-container__header">
+      <div class="p-grid l-main-grid">
+        <div class="p-col-12 p-xl-10 p-xl-offset-1"></div>
+        <div
+          class="l-finor-cadastro-container__title-wrapper p-col-12 p-xl-10 p-xl-offset-1 p-d-flex p-ai-center p-jc-between p-mb-3"
+        >
+          <div>
+            <h2 class="l-finor-cadastro-container__title p-ml-3">Setor -</h2>
+            <h2 class="l-finor-cadastro-container__title p-ml-3">
+              {{ id ? "Editar " : "Criar " }}
+            </h2>
+          </div>
+          <div>
+            <p-button
+              label="VOLTAR"
+              icon="pi pi-directions-alt"
+              [routerLink]="'/setor/index'"
+              styleClass="p-button-outlined p-button-secondary p-mr-3"
+            ></p-button>
+
+            <p-button
+              label="LIMPAR CAMPOS"
+              icon="pi pi-undo"
+              styleClass="p-button-outlined p-button-secondary p-mr-3"
+              (click)="reset()"
+            ></p-button>
+            <p-button
+              [label]="'SALVAR'"
+              icon="pi pi-save"
+              [disabled]="form.invalid"
+              (click)="save()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="p-grid l-main-grid">
+    <div class="p-col-12 p-xl-10 p-xl-offset-1">
+      <p-tabView>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <div class="l-finor-cadastro-container__tab-header p-d-flex">
+              <span
+                class="l-finor-cadastro-container__tab-header-step p-mr-2 p-d-flex p-ai-center p-jc-center"
+              >
+                1 -
+              </span>
+              <span class="l-finor-cadastro-container__tab-header-title">
+                Cadastro
+              </span>
+            </div>
+          </ng-template>
+          <div class="p-mt-3 p-mb-2">
+            <p-card>
+              <form [formGroup]="form" class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-6">
+                  <label>Nome</label>
+                  <input
+                    placeholder="Preencha um nome"
+                    formControlName="descricao"
+                    id="nome"
+                    type="text"
+                    pInputText
+                  />
+                  <small
+                    class="p-invalid"
+                    *ngIf="
+                      form.get('descricao').invalid &&
+                      form.get('descricao').touched
+                    "
+                  >
+                    Digite um nome
+                  </small>
+                </div>
+              </form>
+            </p-card>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</section>

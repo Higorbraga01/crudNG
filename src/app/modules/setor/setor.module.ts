@@ -14,10 +14,12 @@ import { TabViewModule } from 'primeng/tabview';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { InputMaskModule } from 'primeng/inputmask';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     IndexComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,
