@@ -41,6 +41,7 @@
             <th>Id</th>
             <th>Nome</th>
             <th>Setor</th>
+            <td>Idade</td>
             <th>Dt Nascimento</th>
             <th></th>
           </tr>
@@ -50,6 +51,7 @@
             <td>{{ colaborador.id }}</td>
             <td>{{ colaborador.nome }}</td>
             <td>{{ colaborador.setor.descricao }}</td>
+            <td>{{ colaborador.idade }}</td>
             <td>{{ colaborador.dataNascimento | date: "dd/MM/YYYY" }}</td>
             <td>
               <button
